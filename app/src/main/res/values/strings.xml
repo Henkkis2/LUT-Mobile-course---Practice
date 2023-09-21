@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">MandatoryTasksApp</string>
+
+    <string-array name="items">
+        <item>peach</item>
+        <item>tomato</item>
+        <item>squash</item>
+    </string-array>
+
+    <string-array name="prices">
+        <item>$0.99</item>
+        <item>£1,50</item>
+        <item>$0,99</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>Fresh fruits</item>
+        <item>Fresh salads</item>
+        <item>Fresh yellow food</item>
+    </string-array>
 </resources>

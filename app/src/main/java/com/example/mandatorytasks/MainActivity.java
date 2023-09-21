@@ -56,5 +56,14 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText("Result: " + result);
             }
         });
+
+        Button ListVieww = (Button) findViewById(R.id.ThirdButton);
+        ListVieww.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ListViewAct.class);
+                startActivity(intent);
+            }
+        });
     }
 }
