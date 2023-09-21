@@ -2,9 +2,9 @@
     <string name="app_name">MandatoryTasksApp</string>
 
     <string-array name="items">
-        <item>peach</item>
-        <item>tomato</item>
-        <item>squash</item>
+        <item>peach                                $0.99</item>
+        <item>tomato                               $1.99</item>
+        <item>banana                               $2.99</item>
     </string-array>
 
     <string-array name="prices">

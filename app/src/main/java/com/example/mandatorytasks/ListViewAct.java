@@ -14,10 +14,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListViewAct extends AppCompatActivity {
-    ListView myListView;
     String[] items;
     String[] prices;
     String[] descriptions;
@@ -28,13 +29,33 @@ public class ListViewAct extends AppCompatActivity {
         setContentView(R.layout.activity_list_view);
 
         Resources res = getResources();
-        myListView = (ListView) findViewById(R.id.myListView);
+        ListView myListView = (ListView) findViewById(R.id.myListView);
         items = res.getStringArray(R.array.items);
         prices = res.getStringArray(R.array.prices);
         descriptions = res.getStringArray(R.array.descriptions);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+        myListView.setAdapter(adapter);
 
-        ItemAdapter itemAdapter = new ItemAdapter(this, items, prices, descriptions);
-        myListView.setAdapter(itemAdapter);
+        myListView.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                System.out.println(i);
+
+                if (i==0) {
+                    Intent intent = new Intent(getApplicationContext(), peachAct.class);
+                    intent.putExtra("Value", items[i]);
+                    startActivity(intent);
+                } else if (i==1) {
+                    Intent intent = new Intent(getApplicationContext(), ImageView.class);
+                    intent.putExtra("Value", items[i]);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(getApplicationContext(), bananaAct.class);
+                    intent.putExtra("Value", items[i]);
+                    startActivity(intent);
+                }
+            }
+        });
 
     }
 }
